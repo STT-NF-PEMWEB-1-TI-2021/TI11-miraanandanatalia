@@ -1,0 +1,312 @@
+<html lang="en">
+
+<head>
+    <!-- meta tag -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <!-- internal css -->
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Tahoma';
+        }
+
+        body {
+            margin: 0px auto;
+        }
+
+        li a:hover:not(.active) {
+            color: #212121
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .col-6 {
+            width: 50%;
+            float: left;
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table thead th {
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        table tfoot td {
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        img {
+            padding: 10px;
+            width: 30%;
+            vertical-align: middle;
+        }
+
+        .select {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .select .opt {
+            width: 30%;
+        }
+
+        tfoot {
+            text-align: right;
+        }
+
+        .card {
+            padding: 20px;
+            background-color: lightgrey;
+            box-shadow: 5px 7px #b9b6b6;
+        }
+
+        .text-card {
+            padding: 0;
+        }
+
+        .text-card .text-left {
+            float: left
+        }
+
+        .text-card .text-right {
+            float: right;
+        }
+
+        .btn-checkout {
+            padding: 15px;
+            width: 100%;
+            background-color: blue;
+            font-size: 25px;
+            color: white;
+            border: 3px solid black;
+        }
+
+        .btn-checkout:hover {
+            background-color: grey;
+        }
+
+        footer {
+            position: bottom;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: lightgrey;
+            font-size: 18px;
+        }
+
+        .method-payment {
+            padding: 5px;
+        }
+
+        .method-payment i {
+            margin-right: 10px;
+        }
+
+        .input-email {
+            width: 75%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        .btn-subscribe {
+            padding: 10px;
+            margin-left: -10px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <!---- use font awesome --->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body style="min-height: 100vh;">
+    <!-- navbar -->
+    <nav style="background-color: #D3D3D3;">
+        <h1 style="padding: 10px; float: left;">
+            <a style="font-size: 20px;" href="#"> <i class="fas fa-store fa-lg"></i> &nbsp;Tzshop </a>
+        </h1>
+        <ul style="list-style-type: none; margin: 0; padding: 22px; overflow: hidden;">
+            <li style="border-right: 1px solid; float: left; padding: 15px;">
+                <a style="font-size: 20px;" href="#"> Category 1 </a>
+            </li>
+            <li style="border-right: 1px solid; float: left; padding: 15px;">
+                <a style="font-size: 20px;" href="#"> Category 2 </a>
+            </li>
+            <li style="float: left; padding: 15px;">
+                <a style="font-size: 20px;" href="#"> Category 3 </a>
+            </li>
+            <li style="float: right; padding: 15px; margin-left: -5px;">
+                <a style="font-size: 20px;" href="#"> <i class="fas fa-shopping-cart"></i> Cart (1) </a>
+            </li>
+            <li style="float: right; padding: 15px; margin-left: -5px;">
+                <a style="font-size: 20px;" href="#"> <i class="fas fa-search"></i> </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- end of navbar -->
+    <div style="clear: both;"></div>
+    <!-- table cart -->
+    <section class="col-6">
+        <article>
+            <header>
+                <h1>You Cart</h1>
+            </header>
+            <table>
+                <thead>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="60%">
+                            <img src="data:image/jpeg;base64,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" alt="shirt picture">
+                            Shirt size small
+                        </td>
+                        <td style="text-align: center;">
+                            Rp. 20.000
+                        </td>
+                        <td class="select" style="text-align: center;">
+                            <select name="qty" id="qty" class="opt">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            Subtotal : Rp. 20.000
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+    </section>
+    <!-- end of table cart -->
+
+    <!-- bill -->
+    <section class="col-6">
+        <article class="card">
+            <header>
+                <h3>Summary (1 Item)</h3>
+            </header>
+            <div class="text-card">
+                <p class="text-left">
+                    Subtotal
+                </p>
+                <p class="text-right">
+                    $20.00
+                </p>
+
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="text-card">
+                <p class="text-left">
+                    Shipping
+                </p>
+                <p class="text-right">
+                    -
+                </p>
+
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="text-card">
+                <p class="text-left">
+                    Est. Taxes
+                </p>
+                <p class="text-right">
+                    -
+                </p>
+
+                <div style="clear: both;"></div>
+            </div>
+
+            <hr>
+
+            <div class="text-card">
+                <p class="text-left">
+                    Total
+                </p>
+                <p class="text-right">
+                    $20.00
+                </p>
+
+                <div style="clear: both;"></div>
+            </div>
+            <button class="btn-checkout">Checkout</button>
+        </article>
+    </section>
+    <!-- end of bill -->
+    <div style="clear: both;"></div>
+    <!-- footer -->
+    <footer>
+        <div style="float:left;">
+            <h4 style="float: left;">
+                <a href="#">TzShop</a>
+            </h4>
+            <ul style="list-style-type: none; margin: 0; padding: 10px; overflow: hidden;">
+                <li style="border-right: 1px solid; float: left; padding: 15px;">
+                    <a href="#"> Category 1 </a>
+                </li>
+                <li style="border-right: 1px solid; float: left; padding: 15px;">
+                    <a href="#"> Category 2 </a>
+                </li>
+                <li style="float: left; padding: 15px;">
+                    <a href="#"> Category 3 </a>
+                </li>
+            </ul>
+            <div class="method-payment">
+                <i class="fab fa-cc-visa fa-2x"></i>
+                <i class="fab fa-cc-mastercard fa-2x"></i>
+                <i class="fab fa-cc-paypal fa-2x"></i>
+            </div>
+        </div>
+        <div style="float:right;">
+            <h4>
+                Stay in Touch! Join our Newsletter.
+            </h4>
+
+            <input type="text" name="email" id="email" placeholder="Enter Email" class="input-email">
+            <button class="btn-subscribe">Subscribe</button>
+        </div>
+
+
+        <div style="clear: both;"></div>
+    </footer>
+    <!-- end of footer -->
+</body>
+
+</html>
