@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type=text/css>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container-flex {
+            display: flex;
+            flex-grow: 1;
+        }
+        nav {
+            width: 20%;
+            height: auto;
+            background-color: pink;
+            padding: 20px;
+        }
+        .content {
+            width: 100%;
+        }
+        header, 
+        footer {
+            width: auto;
+            height: 10em;
+            background-color: rgb(240, 240, 136);
+            padding: 20px;
+        }
+        article {
+            width: 80%;
+            height: 23em;
+            padding: 20px;
+        }
+        aside {
+            width: 20%;
+            padding: 20px;
+            background-color: rgb(165, 247, 253);
+        }
+        
+        @media screen and (max-width: 425px) {
+            nav {
+                width: 25%;
+            }
+
+            article {
+                width: 65%;
+            }
+
+            aside {
+                width: 35%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-flex">
+        <nav>
+            <h1>Nav</h1>
+        </nav>
+        <div class="content">
+            <header>
+                <h1>Header</h1>
+            </header>
+            <main class="container-flex">
+                <article>
+                    <h1>Article</h1>
+                </article>
+                <aside>
+                    <h1>Aside</h1>
+                </aside>
+            </main>
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+        </div>
+    </div>
+    
+</body>
+</html>
