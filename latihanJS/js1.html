@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Lingkaran</title>
+    <script>
+        function calculator(){
+            const phi = 3.14;
+            let jari = document.getElementById("angka").value;
+            console.log("jari-jari: " + jari);
+            let luas = phi * jari * jari
+            let keliling = 2.0 * phi * jari;
+            console.log("luas; " + luas);
+            console.log("keliling + keliling");
+            let tottal = document.getElementById("hasil");
+            total.innerHTML = "Luas " + luas + "cm " + "dan " + "\nkeliling " + keliling +"cm";
+        }
+    </script>
+</head>
+<body>
+    <h2  style="font-family: sans-serif;Modul Kalkulator dan Keliling Lingkaran"></h2>
+    <br>
+    <br>
+    Masukkan Jari-Jari Lingkaran :
+    <br>
+    <input type="bilangan" value="" size="15" id="angka">
+    <br>
+    <button onclick="calculator()">Hasil</button>
+    <br>
+    Hasil =
+    <span id="hasil"></span>
+    
+</body>
+</html>
