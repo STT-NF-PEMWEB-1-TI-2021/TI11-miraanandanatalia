@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+</head>
+<body>
+    <form name="submit">
+        <table width="225" cellpadding="5"> 
+             <tr><td>Nama pelanggan</td><td> <input id ="Namapelanggan" name="Namapelanggan" type="text" placeholder="Nama lengkap"></td></tr>
+             <tr><td>Email</td><td><input id ="Email" name="Email" type="Email" placeholder=" Masukkan Email"></td></tr>
+             <tr><td>Jam keberangkatan</td><td><input id="Jamkeberangkatan" name="Jamkeberangkatan" type="text" placeholder="Antara 00.00-23.59"></td></tr>
+             <tr><td>Tujuan keberangkatan</td><td><input id="Tujuankeberangkatan" name="Tujuankeberangkatan" type="text" placeholder=""></td></tr>
+             <tr><td>Jumlah tiket</td><td><input id="Jumlahtiket" name="Jumlahtiket" type="number" placeholder="Antara 1-10"></td></tr>
+             <tr><td colspan="2" align="right"><input type="button" value="pesan tiket" onClick="pesantiket()"></td></tr>
+        </table>
+    </form>
+    <script>
+        function pesantiket(){
+         let Namapelanggan = document.getElementById("Namapelanggan").value;
+         let Email = document.getElementById("Email").value;
+         let Jamkeberangkatan = document.getElementById("Jamkeberangkatan").value;
+         let Tujuankeberangkatan = document.getElementById("Tujuankeberangkatan").value;
+         let Jumlahtiket = document.getElementById("Jumlahtiket").value;
+
+         console.log(Namapelanggan); 
+         console.log(Email); 
+         console.log(Jamkeberangkatan); 
+         console.log(Tujuankeberangkatan);
+         console.log(Jumlahtiket);
+
+         if(Namapelanggan == "" || Email == "" || Jamkeberangkatan== "" || Tujuankeberangkatan == "" || Jumlahtiket == "" ){
+            alert("pesananditerima")
+         }
+         else{
+             alert("pesananditerima")
+         }
+
+        } 
+
+    </script>
+    
+</body>
+</html>

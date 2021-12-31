@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+
+    <style>
+        .block {
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 25%;
+            height: 25%;
+            margin: 10%;
+        }
+        .name {
+            margin-bottom: 30px;
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+        .pass {
+            margin-bottom: 20px;
+            margin-left: 15px;
+        }
+        .button {
+            margin-left: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function login() {
+        let username = document.getElementById("username"),value;
+        let password = document.getElementById("password"),value;
+
+        if (username == "mira" && password == "visioner"){
+            alert("Log In Success");
+            window.location.href = "file:///C:/xampp/htdocs/praktikumJS/login.html"
+        }
+        else {
+            alert("Log In Failed, Please Try Again");
+        }
+   }
+    </script>
+</head>
+<body>
+    <div class="block">
+        <div class="name">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Username" id="username">
+        </div>
+        <div class="pass">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password">
+        </div>
+        <div class="button">
+            <button onclick="login()">Log In</button>
+        </div>
+    </div>
+    
+</body>
+</html>

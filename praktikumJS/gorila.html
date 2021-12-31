@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+</head>
+<body>
+    <label for="hewan">Hewan</label>
+    <select id="hewan" onchange="cetakGambar()">
+        <option value="gorilla">gorilla</option>
+        <option value="anjing">anjing</option>
+        <option value="kucing">kucing</option>
+        <option value="buaya">buaya</option>
+    </select>
+
+    <img src="" id="gambar">
+    
+    <script>
+
+        function cetakGambar() {
+            const hewan = document.getElementById("hewan");
+            const gambar = document.getElementById("gambar");
+        
+            if (hewan.value === "gorilla") {
+                gambar.src = "https://www.bing.com/images/search?view=detailV2&ccid=fvdbAHtY&id=D9F793E787A2DDA481331A397C5AF1D3C4052115&thid=OIP.fvdbAHtYJU9DA6B_fzhM7wHaKd&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.7ef75b007b58254f4303a07f7f384cef%3frik%3dFSEFxNPxWnw5Gg%26riu%3dhttp%253a%252f%252fi.dailymail.co.uk%252fi%252fpix%252f2010%252f06%252f09%252farticle-0-09F5491D000005DC-493_634x896.jpg%26ehk%3dkIZPZneJXvQecIEESHLkkZTltO3O4SV1WdEw5G638aA%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=896&expw=634&q=gambar+gorila&simid=608002141912655354&FORM=IRPRST&ck=ABEBBCD595589AFDE40D8318BA440DE3&selectedIndex=10&ajaxhist=0&ajaxserp=0"
+            }
+
+            if( hewan.value === "anjing"){
+                gambar.src = "https://www.bing.com/images/search?view=detailV2&ccid=TYtoYT%2bA&id=020D6736792BE8A36CF9EC22596FDC8B6B4F0522&thid=OIP.TYtoYT-AzrrQwwOIappvKAHaHa&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.4d8b68613f80cebad0c303886a9a6f28%3frik%3dIgVPa4vcb1ki7A%26riu%3dhttp%253a%252f%252f4.bp.blogspot.com%252f-EhOWjb-DdH8%252fUkOlbpumcoI%252fAAAAAAAAAcc%252fX3WwtlXmyTI%252fs1600%252f16Gambar%252bAnjing%252bLucu.gunggung.blogspot.jpg%26ehk%3dj%252bN1FbBAdB0r%252f4YH3%252fjg9%252bhpJ9vORhpC%252b8v3pnOxFd8%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=1024&expw=1024&q=gambar+anjing&simid=608016766285917009&FORM=IRPRST&ck=77C041822F73D9673766E5A8C6F6A188&selectedIndex=0&idpp=overlayview&ajaxhist=0&ajaxserp=0"
+            }
+
+            if (hewan.value === "kucing"){
+                gambar.src = "https://www.bing.com/images/search?q=gambar+kucing&id=F50F9314B98B4034F387682F9C94582EF68A90A3&form=IQFRBA&first=1&disoverlay=1"
+            }
+
+            if (hewan.value === "buaya"){
+                gambar.src = "https://www.bing.com/images/search?view=detailV2&ccid=GnYewHTJ&id=D22D0BA4DC71E45BFED0FB5EDA5AB397542472FD&thid=OIP.GnYewHTJRnO7wzPSKLZ1YgHaEc&mediaurl=https%3a%2f%2f4.bp.blogspot.com%2f-ZPFmiQ4HocY%2fVVg2ENMohGI%2fAAAAAAAAK5I%2fghssQFz2z5k%2fs1600%2fgambar%252Bbuaya%252B(21).jpg&exph=372&expw=620&q=gambar+buaya&simid=608028895270409297&FORM=IRPRST&ck=F6703E4875DA80CE6814B162B87CD87D&selectedIndex=6&ajaxhist=0&ajaxserp=0"
+            }
+        }
+        
+    </script>
+</body>
+</html>
